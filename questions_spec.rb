@@ -7,7 +7,7 @@ RSpec.configure do |config|
 end
 
 describe 'the Friday test :)' do
-  
+
   specify 'select_elements_starting_with_a' do
     n = select_elements_starting_with_a ['bananas', 'apples', 'pears', 'avocados']
     expect(n).to eq ['apples', 'avocados']
@@ -76,7 +76,7 @@ describe 'the Friday test :)' do
     expect(n).to eq [[2, 4, 6], [1, 3, 5, 7]]
   end
 
-  specify 'number_of_elements_that_are_palindromes' do
+  fspecify 'number_of_elements_that_are_palindromes' do
     n = number_of_elements_that_are_palindromes ['bob', 'radar', 'alex', 'noon', 'banana']
     expect(n).to eq 3
   end
@@ -170,8 +170,8 @@ describe 'the Friday test :)' do
     a = check_a_string_for_special_characters 'ABCdef123'
     b = check_a_string_for_special_characters 'ABC@def123!'
 
-    expect(a).to be_false
-    expect(b).to be_true
+    expect(a).to eq false
+    expect(b).to eq true
   end
 
   specify 'get_upper_limit_of' do
@@ -183,8 +183,8 @@ describe 'the Friday test :)' do
     a = is_a_3_dot_range? 1..20
     b = is_a_3_dot_range? 1...20
 
-    expect(a).to be_false
-    expect(b).to be_true
+    expect(a).to eq false
+    expect(b).to eq true
   end
 
   specify 'square_root_of' do
@@ -218,6 +218,6 @@ describe 'the Friday test :)' do
 
   specify 'count_words_of_each_length_in_a_file' do
     n = count_words_of_each_length_in_a_file('lorem.txt') || []
-    expect(Hash[n.sort]).to eq({1=>1, 2=>5, 3=>7, 4=>12, 5=>14, 6=>4, 7=>8, 8=>6, 9=>6, 10=>2, 11=>2, 12=>3}) 
+    expect(Hash[n.sort]).to eq({1=>1, 2=>5, 3=>7, 4=>12, 5=>14, 6=>4, 7=>8, 8=>6, 9=>6, 10=>2, 11=>2, 12=>3})
   end
 end
